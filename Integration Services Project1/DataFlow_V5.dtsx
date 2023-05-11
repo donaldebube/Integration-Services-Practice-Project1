@@ -1,0 +1,1282 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/8/2023 10:49:16 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MANLIKEKED"
+  DTS:CreatorName="MANLIKEKED\USER"
+  DTS:DTSID="{61C5898A-1C48-41AE-826F-8583D5C16C36}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5035.3"
+  DTS:LocaleID="2057"
+  DTS:ObjectName="DataFlow_V5"
+  DTS:PackageType="5"
+  DTS:VersionBuild="22"
+  DTS:VersionGUID="{92863339-6FF2-41DD-8C79-8FF403944941}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[MANLIKEKED\SQLEXPRESS01.SSIS Destination Practice]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{718B2508-8BC5-4FF1-B2BC-D3AC7073447A}"
+      DTS:ObjectName="MANLIKEKED\SQLEXPRESS01.SSIS Destination Practice">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=MANLIKEKED\SQLEXPRESS01;Initial Catalog=SSIS Destination Practice;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{718B2508-8BC5-4FF1-B2BC-D3AC7073447A}MANLIKEKED\SQLEXPRESS01.SSIS Destination Practice;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[MANLIKEKED\SQLEXPRESS01.SSIS Target Destination]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{6810EE4D-2166-4E31-BFD2-B9AAE25DA063}"
+      DTS:ObjectName="MANLIKEKED\SQLEXPRESS01.SSIS Target Destination">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=MANLIKEKED\SQLEXPRESS01;Initial Catalog=SSIS Target Destination;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{6810EE4D-2166-4E31-BFD2-B9AAE25DA063}MANLIKEKED\SQLEXPRESS01.SSIS Target Destination;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[PracticeFile]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{24BD4504-34BD-4DBC-90E8-5FD50B25089B}"
+      DTS:ObjectName="PracticeFile">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="2057"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\USER\Videos\Data Analytics\SSIS Practice\Practice Table 1.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ID"
+              DTS:DTSID="{F5B40E33-63BC-4D9A-8192-6E8A5DE56417}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Sales Agent"
+              DTS:DTSID="{E4D9656D-DA9D-4C80-BB52-99572BAE31D7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Sales Country"
+              DTS:DTSID="{98377324-16E3-42D3-B543-F1E4636FF1A7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Sales Amount"
+              DTS:DTSID="{ED41A37B-CE21-4C47-8E49-78D9320213F9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Department ID"
+              DTS:DTSID="{97E7352D-4EAD-4ED8-B9C9-7D7D1D5B445D}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Load CSV File into DB"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{62B0E497-4A87-425C-B405-74E4A32FB3FA}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load CSV File into DB"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Load CSV File into DB\Flat File Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="2057"
+              name="Flat File Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load CSV File into DB\Flat File Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[PracticeFile]"
+                  connectionManagerRefId="Package.ConnectionManagers[PracticeFile]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Load CSV File into DB\Flat File Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load CSV File into DB\Flat File Source.Outputs[Flat File Source Output].Columns[ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load CSV File into DB\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ID]"
+                      length="50"
+                      lineageId="Package\Load CSV File into DB\Flat File Source.Outputs[Flat File Source Output].Columns[ID]"
+                      name="ID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load CSV File into DB\Flat File Source.Outputs[Flat File Source Output].Columns[Sales Agent]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load CSV File into DB\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Sales Agent]"
+                      length="50"
+                      lineageId="Package\Load CSV File into DB\Flat File Source.Outputs[Flat File Source Output].Columns[Sales Agent]"
+                      name="Sales Agent"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load CSV File into DB\Flat File Source.Outputs[Flat File Source Output].Columns[Sales Country]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load CSV File into DB\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Sales Country]"
+                      length="50"
+                      lineageId="Package\Load CSV File into DB\Flat File Source.Outputs[Flat File Source Output].Columns[Sales Country]"
+                      name="Sales Country"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load CSV File into DB\Flat File Source.Outputs[Flat File Source Output].Columns[Sales Amount]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load CSV File into DB\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Sales Amount]"
+                      length="50"
+                      lineageId="Package\Load CSV File into DB\Flat File Source.Outputs[Flat File Source Output].Columns[Sales Amount]"
+                      name="Sales Amount"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load CSV File into DB\Flat File Source.Outputs[Flat File Source Output].Columns[Department ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load CSV File into DB\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Department ID]"
+                      length="50"
+                      lineageId="Package\Load CSV File into DB\Flat File Source.Outputs[Flat File Source Output].Columns[Department ID]"
+                      name="Department ID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load CSV File into DB\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ID" />
+                    <externalMetadataColumn
+                      refId="Package\Load CSV File into DB\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Sales Agent]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Sales Agent" />
+                    <externalMetadataColumn
+                      refId="Package\Load CSV File into DB\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Sales Country]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Sales Country" />
+                    <externalMetadataColumn
+                      refId="Package\Load CSV File into DB\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Sales Amount]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Sales Amount" />
+                    <externalMetadataColumn
+                      refId="Package\Load CSV File into DB\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Department ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Department ID" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Load CSV File into DB\Flat File Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load CSV File into DB\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Load CSV File into DB\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Load CSV File into DB\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load CSV File into DB\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load CSV File into DB\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load CSV File into DB\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load CSV File into DB\Load DB"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Load DB"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[OLE DB Destination]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load CSV File into DB\Load DB.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[MANLIKEKED\SQLEXPRESS01.SSIS Destination Practice]"
+                  connectionManagerRefId="Package.ConnectionManagers[MANLIKEKED\SQLEXPRESS01.SSIS Destination Practice]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load CSV File into DB\Load DB.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load CSV File into DB\Load DB.Inputs[OLE DB Destination Input].Columns[ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ID"
+                      externalMetadataColumnId="Package\Load CSV File into DB\Load DB.Inputs[OLE DB Destination Input].ExternalColumns[ID]"
+                      lineageId="Package\Load CSV File into DB\Flat File Source.Outputs[Flat File Source Output].Columns[ID]" />
+                    <inputColumn
+                      refId="Package\Load CSV File into DB\Load DB.Inputs[OLE DB Destination Input].Columns[Sales Agent]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Sales Agent"
+                      externalMetadataColumnId="Package\Load CSV File into DB\Load DB.Inputs[OLE DB Destination Input].ExternalColumns[Sales Agent]"
+                      lineageId="Package\Load CSV File into DB\Flat File Source.Outputs[Flat File Source Output].Columns[Sales Agent]" />
+                    <inputColumn
+                      refId="Package\Load CSV File into DB\Load DB.Inputs[OLE DB Destination Input].Columns[Sales Country]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Sales Country"
+                      externalMetadataColumnId="Package\Load CSV File into DB\Load DB.Inputs[OLE DB Destination Input].ExternalColumns[Sales Country]"
+                      lineageId="Package\Load CSV File into DB\Flat File Source.Outputs[Flat File Source Output].Columns[Sales Country]" />
+                    <inputColumn
+                      refId="Package\Load CSV File into DB\Load DB.Inputs[OLE DB Destination Input].Columns[Sales Amount]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Sales Amount"
+                      externalMetadataColumnId="Package\Load CSV File into DB\Load DB.Inputs[OLE DB Destination Input].ExternalColumns[Sales Amount]"
+                      lineageId="Package\Load CSV File into DB\Flat File Source.Outputs[Flat File Source Output].Columns[Sales Amount]" />
+                    <inputColumn
+                      refId="Package\Load CSV File into DB\Load DB.Inputs[OLE DB Destination Input].Columns[Department ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Department ID"
+                      externalMetadataColumnId="Package\Load CSV File into DB\Load DB.Inputs[OLE DB Destination Input].ExternalColumns[Department ID]"
+                      lineageId="Package\Load CSV File into DB\Flat File Source.Outputs[Flat File Source Output].Columns[Department ID]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load CSV File into DB\Load DB.Inputs[OLE DB Destination Input].ExternalColumns[ID]"
+                      dataType="i4"
+                      name="ID" />
+                    <externalMetadataColumn
+                      refId="Package\Load CSV File into DB\Load DB.Inputs[OLE DB Destination Input].ExternalColumns[Sales Agent]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Sales Agent" />
+                    <externalMetadataColumn
+                      refId="Package\Load CSV File into DB\Load DB.Inputs[OLE DB Destination Input].ExternalColumns[Sales Country]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Sales Country" />
+                    <externalMetadataColumn
+                      refId="Package\Load CSV File into DB\Load DB.Inputs[OLE DB Destination Input].ExternalColumns[Sales Amount]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Sales Amount" />
+                    <externalMetadataColumn
+                      refId="Package\Load CSV File into DB\Load DB.Inputs[OLE DB Destination Input].ExternalColumns[Department ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Department ID" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load CSV File into DB\Load DB.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Load CSV File into DB\Load DB.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load CSV File into DB\Load DB.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load CSV File into DB\Load DB.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load CSV File into DB\Load DB.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load CSV File into DB\Load DB.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Load CSV File into DB.Paths[Flat File Source Output]"
+              endId="Package\Load CSV File into DB\Load DB.Inputs[OLE DB Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\Load CSV File into DB\Flat File Source.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Load Customer Info Into DB"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{A96870AF-56C9-4229-8D5C-612E1D03FC71}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load Customer Info Into DB"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Load Customer Info Into DB\Load Cust"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Load Cust"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Load Cust]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT *
+FROM [dbo].[Load Cust]
+ORDER BY ID</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load Customer Info Into DB\Load Cust.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[MANLIKEKED\SQLEXPRESS01.SSIS Target Destination]"
+                  connectionManagerRefId="Package.ConnectionManagers[MANLIKEKED\SQLEXPRESS01.SSIS Target Destination]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load Customer Info Into DB\Load Cust.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Customer Info Into DB\Load Cust.Inputs[OLE DB Destination Input].Columns[ID]"
+                      cachedDataType="i4"
+                      cachedName="ID"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\Load Customer Info Into DB\Load Cust.Inputs[OLE DB Destination Input].ExternalColumns[ID]"
+                      lineageId="Package\Load Customer Info Into DB\Sort.Outputs[Sort Output].Columns[ID]" />
+                    <inputColumn
+                      refId="Package\Load Customer Info Into DB\Load Cust.Inputs[OLE DB Destination Input].Columns[Sales Agent]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Sales Agent"
+                      externalMetadataColumnId="Package\Load Customer Info Into DB\Load Cust.Inputs[OLE DB Destination Input].ExternalColumns[Sales Agent]"
+                      lineageId="Package\Load Customer Info Into DB\Sort.Outputs[Sort Output].Columns[Sales Agent]" />
+                    <inputColumn
+                      refId="Package\Load Customer Info Into DB\Load Cust.Inputs[OLE DB Destination Input].Columns[Sales Country]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Sales Country"
+                      externalMetadataColumnId="Package\Load Customer Info Into DB\Load Cust.Inputs[OLE DB Destination Input].ExternalColumns[Sales Country]"
+                      lineageId="Package\Load Customer Info Into DB\Sort.Outputs[Sort Output].Columns[Sales Country]" />
+                    <inputColumn
+                      refId="Package\Load Customer Info Into DB\Load Cust.Inputs[OLE DB Destination Input].Columns[Sales Amount]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Sales Amount"
+                      externalMetadataColumnId="Package\Load Customer Info Into DB\Load Cust.Inputs[OLE DB Destination Input].ExternalColumns[Sales Amount]"
+                      lineageId="Package\Load Customer Info Into DB\Sort.Outputs[Sort Output].Columns[Sales Amount]" />
+                    <inputColumn
+                      refId="Package\Load Customer Info Into DB\Load Cust.Inputs[OLE DB Destination Input].Columns[Department ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Department ID"
+                      externalMetadataColumnId="Package\Load Customer Info Into DB\Load Cust.Inputs[OLE DB Destination Input].ExternalColumns[Department ID]"
+                      lineageId="Package\Load Customer Info Into DB\Sort.Outputs[Sort Output].Columns[Department ID]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load Customer Info Into DB\Load Cust.Inputs[OLE DB Destination Input].ExternalColumns[ID]"
+                      dataType="i4"
+                      name="ID" />
+                    <externalMetadataColumn
+                      refId="Package\Load Customer Info Into DB\Load Cust.Inputs[OLE DB Destination Input].ExternalColumns[Sales Agent]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Sales Agent" />
+                    <externalMetadataColumn
+                      refId="Package\Load Customer Info Into DB\Load Cust.Inputs[OLE DB Destination Input].ExternalColumns[Sales Country]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Sales Country" />
+                    <externalMetadataColumn
+                      refId="Package\Load Customer Info Into DB\Load Cust.Inputs[OLE DB Destination Input].ExternalColumns[Sales Amount]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Sales Amount" />
+                    <externalMetadataColumn
+                      refId="Package\Load Customer Info Into DB\Load Cust.Inputs[OLE DB Destination Input].ExternalColumns[Department ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Department ID" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Customer Info Into DB\Load Cust.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Load Customer Info Into DB\Load Cust.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Customer Info Into DB\Load Cust.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Customer Info Into DB\Load Cust.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Customer Info Into DB\Load Cust.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Customer Info Into DB\Load Cust.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Customer Info Into DB\Sort"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Load Customer Info Into DB\Sort.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Customer Info Into DB\Sort.Inputs[Sort Input].Columns[ID]"
+                      cachedDataType="i4"
+                      cachedName="ID"
+                      lineageId="Package\Load Customer Info Into DB\Source Cust.Outputs[OLE DB Source Output].Columns[ID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Customer Info Into DB\Sort.Inputs[Sort Input].Columns[Sales Agent]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Sales Agent"
+                      lineageId="Package\Load Customer Info Into DB\Source Cust.Outputs[OLE DB Source Output].Columns[Sales Agent]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Customer Info Into DB\Sort.Inputs[Sort Input].Columns[Sales Country]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Sales Country"
+                      lineageId="Package\Load Customer Info Into DB\Source Cust.Outputs[OLE DB Source Output].Columns[Sales Country]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Customer Info Into DB\Sort.Inputs[Sort Input].Columns[Sales Amount]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Sales Amount"
+                      lineageId="Package\Load Customer Info Into DB\Source Cust.Outputs[OLE DB Source Output].Columns[Sales Amount]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Customer Info Into DB\Sort.Inputs[Sort Input].Columns[Department ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Department ID"
+                      lineageId="Package\Load Customer Info Into DB\Source Cust.Outputs[OLE DB Source Output].Columns[Department ID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Customer Info Into DB\Sort.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Customer Info Into DB\Sort.Outputs[Sort Output].Columns[ID]"
+                      dataType="i4"
+                      lineageId="Package\Load Customer Info Into DB\Sort.Outputs[Sort Output].Columns[ID]"
+                      name="ID"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Load Customer Info Into DB\Source Cust.Outputs[OLE DB Source Output].Columns[ID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Customer Info Into DB\Sort.Outputs[Sort Output].Columns[Sales Agent]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Load Customer Info Into DB\Sort.Outputs[Sort Output].Columns[Sales Agent]"
+                      name="Sales Agent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Load Customer Info Into DB\Source Cust.Outputs[OLE DB Source Output].Columns[Sales Agent]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Customer Info Into DB\Sort.Outputs[Sort Output].Columns[Sales Country]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Load Customer Info Into DB\Sort.Outputs[Sort Output].Columns[Sales Country]"
+                      name="Sales Country">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Load Customer Info Into DB\Source Cust.Outputs[OLE DB Source Output].Columns[Sales Country]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Customer Info Into DB\Sort.Outputs[Sort Output].Columns[Sales Amount]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Load Customer Info Into DB\Sort.Outputs[Sort Output].Columns[Sales Amount]"
+                      name="Sales Amount">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Load Customer Info Into DB\Source Cust.Outputs[OLE DB Source Output].Columns[Sales Amount]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Customer Info Into DB\Sort.Outputs[Sort Output].Columns[Department ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Load Customer Info Into DB\Sort.Outputs[Sort Output].Columns[Department ID]"
+                      name="Department ID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Load Customer Info Into DB\Source Cust.Outputs[OLE DB Source Output].Columns[Department ID]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Customer Info Into DB\Source Cust"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Source Cust"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[OLE DB Destination]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load Customer Info Into DB\Source Cust.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[MANLIKEKED\SQLEXPRESS01.SSIS Destination Practice]"
+                  connectionManagerRefId="Package.ConnectionManagers[MANLIKEKED\SQLEXPRESS01.SSIS Destination Practice]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Load Customer Info Into DB\Source Cust.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Customer Info Into DB\Source Cust.Outputs[OLE DB Source Output].Columns[ID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Customer Info Into DB\Source Cust.Outputs[OLE DB Source Output].ExternalColumns[ID]"
+                      lineageId="Package\Load Customer Info Into DB\Source Cust.Outputs[OLE DB Source Output].Columns[ID]"
+                      name="ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Customer Info Into DB\Source Cust.Outputs[OLE DB Source Output].Columns[Sales Agent]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Customer Info Into DB\Source Cust.Outputs[OLE DB Source Output].ExternalColumns[Sales Agent]"
+                      length="50"
+                      lineageId="Package\Load Customer Info Into DB\Source Cust.Outputs[OLE DB Source Output].Columns[Sales Agent]"
+                      name="Sales Agent"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Customer Info Into DB\Source Cust.Outputs[OLE DB Source Output].Columns[Sales Country]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Customer Info Into DB\Source Cust.Outputs[OLE DB Source Output].ExternalColumns[Sales Country]"
+                      length="50"
+                      lineageId="Package\Load Customer Info Into DB\Source Cust.Outputs[OLE DB Source Output].Columns[Sales Country]"
+                      name="Sales Country"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Customer Info Into DB\Source Cust.Outputs[OLE DB Source Output].Columns[Sales Amount]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Customer Info Into DB\Source Cust.Outputs[OLE DB Source Output].ExternalColumns[Sales Amount]"
+                      length="50"
+                      lineageId="Package\Load Customer Info Into DB\Source Cust.Outputs[OLE DB Source Output].Columns[Sales Amount]"
+                      name="Sales Amount"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Customer Info Into DB\Source Cust.Outputs[OLE DB Source Output].Columns[Department ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Customer Info Into DB\Source Cust.Outputs[OLE DB Source Output].ExternalColumns[Department ID]"
+                      length="50"
+                      lineageId="Package\Load Customer Info Into DB\Source Cust.Outputs[OLE DB Source Output].Columns[Department ID]"
+                      name="Department ID"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load Customer Info Into DB\Source Cust.Outputs[OLE DB Source Output].ExternalColumns[ID]"
+                      dataType="i4"
+                      name="ID" />
+                    <externalMetadataColumn
+                      refId="Package\Load Customer Info Into DB\Source Cust.Outputs[OLE DB Source Output].ExternalColumns[Sales Agent]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Sales Agent" />
+                    <externalMetadataColumn
+                      refId="Package\Load Customer Info Into DB\Source Cust.Outputs[OLE DB Source Output].ExternalColumns[Sales Country]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Sales Country" />
+                    <externalMetadataColumn
+                      refId="Package\Load Customer Info Into DB\Source Cust.Outputs[OLE DB Source Output].ExternalColumns[Sales Amount]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Sales Amount" />
+                    <externalMetadataColumn
+                      refId="Package\Load Customer Info Into DB\Source Cust.Outputs[OLE DB Source Output].ExternalColumns[Department ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Department ID" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Load Customer Info Into DB\Source Cust.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Customer Info Into DB\Source Cust.Outputs[OLE DB Source Error Output].Columns[ID]"
+                      dataType="i4"
+                      lineageId="Package\Load Customer Info Into DB\Source Cust.Outputs[OLE DB Source Error Output].Columns[ID]"
+                      name="ID" />
+                    <outputColumn
+                      refId="Package\Load Customer Info Into DB\Source Cust.Outputs[OLE DB Source Error Output].Columns[Sales Agent]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Load Customer Info Into DB\Source Cust.Outputs[OLE DB Source Error Output].Columns[Sales Agent]"
+                      name="Sales Agent" />
+                    <outputColumn
+                      refId="Package\Load Customer Info Into DB\Source Cust.Outputs[OLE DB Source Error Output].Columns[Sales Country]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Load Customer Info Into DB\Source Cust.Outputs[OLE DB Source Error Output].Columns[Sales Country]"
+                      name="Sales Country" />
+                    <outputColumn
+                      refId="Package\Load Customer Info Into DB\Source Cust.Outputs[OLE DB Source Error Output].Columns[Sales Amount]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Load Customer Info Into DB\Source Cust.Outputs[OLE DB Source Error Output].Columns[Sales Amount]"
+                      name="Sales Amount" />
+                    <outputColumn
+                      refId="Package\Load Customer Info Into DB\Source Cust.Outputs[OLE DB Source Error Output].Columns[Department ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Load Customer Info Into DB\Source Cust.Outputs[OLE DB Source Error Output].Columns[Department ID]"
+                      name="Department ID" />
+                    <outputColumn
+                      refId="Package\Load Customer Info Into DB\Source Cust.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Customer Info Into DB\Source Cust.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Customer Info Into DB\Source Cust.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Customer Info Into DB\Source Cust.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Load Customer Info Into DB.Paths[OLE DB Source Output]"
+              endId="Package\Load Customer Info Into DB\Sort.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\Load Customer Info Into DB\Source Cust.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Load Customer Info Into DB.Paths[Sort Output]"
+              endId="Package\Load Customer Info Into DB\Load Cust.Inputs[OLE DB Destination Input]"
+              name="Sort Output"
+              startId="Package\Load Customer Info Into DB\Sort.Outputs[Sort Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="181,42"
+          Id="Package\Load CSV File into DB"
+          TopLeft="442.388888888889,32.2777777777778" />
+        <NodeLayout
+          Size="211.5,42"
+          Id="Package\Load Customer Info Into DB"
+          TopLeft="417,121" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Load CSV File into DB">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="118.5,42"
+          Id="Package\Load CSV File into DB\Load DB"
+          TopLeft="400,184.5" />
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Load CSV File into DB\Flat File Source"
+          TopLeft="386.5,37.5" />
+        <EdgeLayout
+          Id="Package\Load CSV File into DB.Paths[Flat File Source Output]"
+          TopLeft="460.625,79.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,105"
+              Start="0,0"
+              End="0,97.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,97.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load CSV File into DB\Load DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Load Customer Info Into DB">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="135,42"
+          Id="Package\Load Customer Info Into DB\Source Cust"
+          TopLeft="420,39" />
+        <NodeLayout
+          Size="125.5,42"
+          Id="Package\Load Customer Info Into DB\Load Cust"
+          TopLeft="418,175.944444444444" />
+        <NodeLayout
+          Size="98,42"
+          Id="Package\Load Customer Info Into DB\Sort"
+          TopLeft="435,106.5" />
+        <EdgeLayout
+          Id="Package\Load Customer Info Into DB.Paths[Sort Output]"
+          TopLeft="482.375,148.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,27.4444444444445"
+              Start="0,0"
+              End="0,19.9444444444445">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.9444444444445" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Customer Info Into DB.Paths[OLE DB Source Output]"
+          TopLeft="485.75,81">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,25.5"
+              Start="0,0"
+              End="0,18">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Customer Info Into DB\Source Cust">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Customer Info Into DB\Load Cust">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
