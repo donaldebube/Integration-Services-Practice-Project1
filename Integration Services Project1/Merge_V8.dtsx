@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Merge_V8"
   DTS:PackageType="5"
-  DTS:VersionBuild="10"
-  DTS:VersionGUID="{C12A1310-3C2F-4B3D-B41F-96133A261FAC}">
+  DTS:VersionBuild="11"
+  DTS:VersionGUID="{FE717565-8A6A-4251-9B36-174873F3D709}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -485,6 +485,155 @@
               </outputs>
             </component>
             <component
+              refId="Package\Data Flow Task\Cust_3"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="2057"
+              name="Cust_3"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Cust_3.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Cust_3]"
+                  connectionManagerRefId="Package.ConnectionManagers[Cust_3]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Cust_3.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Cust_3.Outputs[Flat File Source Output].Columns[CustID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Cust_3.Outputs[Flat File Source Output].ExternalColumns[CustID]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Cust_3.Outputs[Flat File Source Output].Columns[CustID]"
+                      name="CustID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Cust_3.Outputs[Flat File Source Output].Columns[Name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Cust_3.Outputs[Flat File Source Output].ExternalColumns[Name]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Cust_3.Outputs[Flat File Source Output].Columns[Name]"
+                      name="Name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Cust_3.Outputs[Flat File Source Output].Columns[Shortname]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Cust_3.Outputs[Flat File Source Output].ExternalColumns[Shortname]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Cust_3.Outputs[Flat File Source Output].Columns[Shortname]"
+                      name="Shortname"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Cust_3.Outputs[Flat File Source Output].ExternalColumns[CustID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CustID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Cust_3.Outputs[Flat File Source Output].ExternalColumns[Name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Name" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Cust_3.Outputs[Flat File Source Output].ExternalColumns[Shortname]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Shortname" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Cust_3.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Cust_3.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Data Flow Task\Cust_3.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Cust_3.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Cust_3.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Cust_3.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Cust_3.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\Data Flow Task\Cust_Info_Dest"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
@@ -621,155 +770,6 @@
                       refId="Package\Data Flow Task\Cust_Info_Dest.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
                       lineageId="Package\Data Flow Task\Cust_Info_Dest.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Data Flow Task\Flat File Source"
-              componentClassID="Microsoft.FlatFileSource"
-              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
-              description="Flat File Source"
-              localeId="2057"
-              name="Flat File Source"
-              usesDispositions="true"
-              version="1">
-              <properties>
-                <property
-                  dataType="System.Boolean"
-                  description="Specifies whether zero-length columns are treated as null."
-                  name="RetainNulls">false</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
-                  name="FileNameColumnName"></property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Data Flow Task\Flat File Source.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Cust_3]"
-                  connectionManagerRefId="Package.ConnectionManagers[Cust_3]"
-                  name="FlatFileConnection" />
-              </connections>
-              <outputs>
-                <output
-                  refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output]"
-                  name="Flat File Source Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[CustID]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CustID]"
-                      length="50"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[CustID]"
-                      name="CustID"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Name]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Name]"
-                      length="50"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Name]"
-                      name="Name"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Shortname]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Shortname]"
-                      length="50"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Shortname]"
-                      name="Shortname"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CustID]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="CustID" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Name]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="Name" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Shortname]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="Shortname" />
-                  </externalMetadataColumns>
-                </output>
-                <output
-                  refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output]"
-                  isErrorOut="true"
-                  name="Flat File Source Error Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
-                      codePage="1252"
-                      dataType="text"
-                      description="Flat File Source Error Output Column"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
-                      name="Flat File Source Error Output Column" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -1102,7 +1102,7 @@
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="CustID"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[CustID]">
+                      lineageId="Package\Data Flow Task\Cust_3.Outputs[Flat File Source Output].Columns[CustID]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -1120,7 +1120,7 @@
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="Name"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Name]">
+                      lineageId="Package\Data Flow Task\Cust_3.Outputs[Flat File Source Output].Columns[Name]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -1138,7 +1138,7 @@
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="Shortname"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Shortname]">
+                      lineageId="Package\Data Flow Task\Cust_3.Outputs[Flat File Source Output].Columns[Shortname]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -1173,7 +1173,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[CustID]}</property>
+                          name="SortColumnId">#{Package\Data Flow Task\Cust_3.Outputs[Flat File Source Output].Columns[CustID]}</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
@@ -1188,7 +1188,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Name]}</property>
+                          name="SortColumnId">#{Package\Data Flow Task\Cust_3.Outputs[Flat File Source Output].Columns[Name]}</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
@@ -1203,7 +1203,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Shortname]}</property>
+                          name="SortColumnId">#{Package\Data Flow Task\Cust_3.Outputs[Flat File Source Output].Columns[Shortname]}</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -1503,7 +1503,7 @@
               refId="Package\Data Flow Task.Paths[Flat File Source Output2]"
               endId="Package\Data Flow Task\Sort.Inputs[Sort Input]"
               name="Flat File Source Output"
-              startId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output]" />
+              startId="Package\Data Flow Task\Cust_3.Outputs[Flat File Source Output]" />
             <path
               refId="Package\Data Flow Task.Paths[Merge Output 1]"
               endId="Package\Data Flow Task\Merge 1.Inputs[Merge Input 1]"
@@ -1614,50 +1614,54 @@
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="111.5,42"
-          Id="Package\Data Flow Task\Cust_1"
-          TopLeft="41,54" />
+          Id="Package\Data Flow Task\Cust_3"
+          TopLeft="536.25,62.5" />
         <NodeLayout
-          Size="111.5,42"
-          Id="Package\Data Flow Task\Cust_2"
-          TopLeft="301,56.5" />
+          Size="107.5,42"
+          Id="Package\Data Flow Task\Sort 2"
+          TopLeft="296.5,222" />
         <NodeLayout
           Size="151.5,42"
           Id="Package\Data Flow Task\Cust_Info_Dest"
           TopLeft="154,402.5" />
         <NodeLayout
-          Size="108,42"
-          Id="Package\Data Flow Task\Merge"
-          TopLeft="177.25,317.875" />
+          Size="98,42"
+          Id="Package\Data Flow Task\Sort"
+          TopLeft="571.25,220.625" />
+        <NodeLayout
+          Size="111.5,42"
+          Id="Package\Data Flow Task\Cust_2"
+          TopLeft="301,56.5" />
+        <NodeLayout
+          Size="117.5,42"
+          Id="Package\Data Flow Task\Merge 1"
+          TopLeft="563.75,326.25" />
         <NodeLayout
           Size="107.5,42"
           Id="Package\Data Flow Task\Sort 1"
           TopLeft="47.5,220.5" />
+        <NodeLayout
+          Size="108,42"
+          Id="Package\Data Flow Task\Merge"
+          TopLeft="177.25,317.875" />
+        <NodeLayout
+          Size="111.5,42"
+          Id="Package\Data Flow Task\Cust_1"
+          TopLeft="41,54" />
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Sort Output]"
-          TopLeft="101.25,262.5">
+          Id="Package\Data Flow Task.Paths[Flat File Source Output]"
+          TopLeft="99,96">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="113.333333333333,55.375"
+              EndConnector="0,124.5"
               Start="0,0"
-              End="113.333333333333,47.875">
+              End="0,117">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,28.7399635036496" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,28.7399635036496"
-                    Point2="0,32.7399635036496"
-                    Point3="4,32.7399635036496" />
-                  <mssgle:LineSegment
-                    End="109.333333333333,32.7399635036496" />
-                  <mssgle:CubicBezierSegment
-                    Point1="109.333333333333,32.7399635036496"
-                    Point2="113.333333333333,32.7399635036496"
-                    Point3="113.333333333333,36.7399635036496" />
-                  <mssgle:LineSegment
-                    End="113.333333333333,47.875" />
+                    End="0,117" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1666,10 +1670,28 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="107.5,42"
-          Id="Package\Data Flow Task\Sort 2"
-          TopLeft="296.5,222" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Sort Output2]"
+          TopLeft="621.375,262.625">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,63.625"
+              Start="0,0"
+              End="0,56.125">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,56.125" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Sort Output1]"
           TopLeft="350.25,264">
@@ -1705,87 +1727,31 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Flat File Source Output]"
-          TopLeft="99,96">
+          Id="Package\Data Flow Task.Paths[Sort Output]"
+          TopLeft="101.25,262.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,124.5"
+              EndConnector="113.333333333333,55.375"
               Start="0,0"
-              End="0,117">
+              End="113.333333333333,47.875">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,117" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Flat File Source Output1]"
-          TopLeft="353.5,98.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,123.5"
-              Start="0,0"
-              End="0,116">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,116" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="151,42"
-          Id="Package\Data Flow Task\Flat File Source"
-          TopLeft="536.25,62.5" />
-        <NodeLayout
-          Size="98,42"
-          Id="Package\Data Flow Task\Sort"
-          TopLeft="571.25,220.625" />
-        <NodeLayout
-          Size="117.5,42"
-          Id="Package\Data Flow Task\Merge 1"
-          TopLeft="563.75,326.25" />
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Flat File Source Output2]"
-          TopLeft="611.75,104.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="8.5,116.125"
-              Start="0,0"
-              End="8.5,108.625">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,54.0625" />
+                    End="0,28.7399635036496" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,54.0625"
-                    Point2="0,58.0625"
-                    Point3="4,58.0625" />
+                    Point1="0,28.7399635036496"
+                    Point2="0,32.7399635036496"
+                    Point3="4,32.7399635036496" />
                   <mssgle:LineSegment
-                    End="4.5,58.0625" />
+                    End="109.333333333333,32.7399635036496" />
                   <mssgle:CubicBezierSegment
-                    Point1="4.5,58.0625"
-                    Point2="8.5,58.0625"
-                    Point3="8.5,62.0625" />
+                    Point1="109.333333333333,32.7399635036496"
+                    Point2="113.333333333333,32.7399635036496"
+                    Point3="113.333333333333,36.7399635036496" />
                   <mssgle:LineSegment
-                    End="8.5,108.625" />
+                    End="113.333333333333,47.875" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1795,19 +1761,31 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Sort Output2]"
-          TopLeft="621.375,262.625">
+          Id="Package\Data Flow Task.Paths[Merge Output 11]"
+          TopLeft="622.5,368.25">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,63.625"
+              EndConnector="-392.75,34.25"
               Start="0,0"
-              End="0,56.125">
+              End="-392.75,26.75">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,56.125" />
+                    End="0,13.125" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.125"
+                    Point2="0,17.125"
+                    Point3="-4,17.125" />
+                  <mssgle:LineSegment
+                    End="-388.75,17.125" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-388.75,17.125"
+                    Point2="-392.75,17.125"
+                    Point3="-392.75,21.125" />
+                  <mssgle:LineSegment
+                    End="-392.75,26.75" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1851,31 +1829,53 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Merge Output 11]"
-          TopLeft="622.5,368.25">
+          Id="Package\Data Flow Task.Paths[Flat File Source Output2]"
+          TopLeft="592,104.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-392.75,34.25"
+              EndConnector="28.25,116.125"
               Start="0,0"
-              End="-392.75,26.75">
+              End="28.25,108.625">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,13.125" />
+                    End="0,54.0625" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,13.125"
-                    Point2="0,17.125"
-                    Point3="-4,17.125" />
+                    Point1="0,54.0625"
+                    Point2="0,58.0625"
+                    Point3="4,58.0625" />
                   <mssgle:LineSegment
-                    End="-388.75,17.125" />
+                    End="24.25,58.0625" />
                   <mssgle:CubicBezierSegment
-                    Point1="-388.75,17.125"
-                    Point2="-392.75,17.125"
-                    Point3="-392.75,21.125" />
+                    Point1="24.25,58.0625"
+                    Point2="28.25,58.0625"
+                    Point3="28.25,62.0625" />
                   <mssgle:LineSegment
-                    End="-392.75,26.75" />
+                    End="28.25,108.625" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Flat File Source Output1]"
+          TopLeft="353.5,98.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,123.5"
+              Start="0,0"
+              End="0,116">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,116" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
