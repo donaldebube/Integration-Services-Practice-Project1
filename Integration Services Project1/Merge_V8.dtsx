@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Merge_V8"
   DTS:PackageType="5"
-  DTS:VersionBuild="11"
-  DTS:VersionGUID="{FE717565-8A6A-4251-9B36-174873F3D709}">
+  DTS:VersionBuild="12"
+  DTS:VersionGUID="{665D2F49-B39F-4E28-9328-477F2C5717A9}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1613,17 +1613,17 @@
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="111.5,42"
-          Id="Package\Data Flow Task\Cust_3"
-          TopLeft="536.25,62.5" />
+          Size="151.5,42"
+          Id="Package\Data Flow Task\Cust_Info_Dest"
+          TopLeft="154,402.5" />
         <NodeLayout
           Size="107.5,42"
           Id="Package\Data Flow Task\Sort 2"
           TopLeft="296.5,222" />
         <NodeLayout
-          Size="151.5,42"
-          Id="Package\Data Flow Task\Cust_Info_Dest"
-          TopLeft="154,402.5" />
+          Size="111.5,42"
+          Id="Package\Data Flow Task\Cust_3"
+          TopLeft="536.25,62.5" />
         <NodeLayout
           Size="98,42"
           Id="Package\Data Flow Task\Sort"
