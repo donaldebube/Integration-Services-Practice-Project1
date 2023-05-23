@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Sequence Container_V12"
   DTS:PackageType="5"
-  DTS:VersionBuild="7"
-  DTS:VersionGUID="{42207086-5B9B-49FC-BA87-28B1C0F7FAD0}">
+  DTS:VersionBuild="9"
+  DTS:VersionGUID="{4E292C50-F95B-4029-BB6F-CA1978842EDE}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
